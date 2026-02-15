@@ -1,0 +1,2 @@
+overrides:
+  '@nuclearplayer/plugin-sdk': link:../nuclear-xrd/packages/plugin-sdk
