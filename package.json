@@ -1,6 +1,6 @@
 {
   "name": "nuclear-plugin-soundcloud",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "SoundCloud metadata and streaming provider for Nuclear music player",
   "author": "nukeop",
   "license": "AGPL-3.0-only",
