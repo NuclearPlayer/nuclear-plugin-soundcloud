@@ -17,7 +17,11 @@ import {
   searchTracks,
   searchUsers,
 } from './api';
-import { DEFAULT_SEARCH_LIMIT, METADATA_PROVIDER_ID } from './config';
+import {
+  DEFAULT_SEARCH_LIMIT,
+  METADATA_PROVIDER_ID,
+  STREAMING_PROVIDER_ID,
+} from './config';
 import { createSoundcloudFetch } from './fetch';
 import {
   mapPlaylistToPlaylistRef,
@@ -40,6 +44,7 @@ export const createMetadataProvider = (
     id: METADATA_PROVIDER_ID,
     kind: 'metadata',
     name: 'SoundCloud',
+    streamingProviderId: STREAMING_PROVIDER_ID,
     searchCapabilities: ['artists', 'tracks'],
     artistMetadataCapabilities: [
       'artistSocialStats',
