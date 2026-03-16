@@ -1,6 +1,6 @@
 {
   "name": "nuclear-plugin-soundcloud",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "SoundCloud metadata and streaming provider for Nuclear music player",
   "author": "nukeop",
   "license": "AGPL-3.0-only",
@@ -15,7 +15,13 @@
     },
     "permissions": []
   },
-  "keywords": ["nuclear", "plugin", "soundcloud", "metadata", "streaming"],
+  "keywords": [
+    "nuclear",
+    "plugin",
+    "soundcloud",
+    "metadata",
+    "streaming"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/NuclearPlayer/nuclear-plugin-soundcloud.git"
@@ -29,7 +35,10 @@
     "format": "prettier --write 'src/**/*.ts'",
     "format:check": "prettier --check 'src/**/*.ts'"
   },
-  "files": ["src", "README.md"],
+  "files": [
+    "src",
+    "README.md"
+  ],
   "dependencies": {
     "@nuclearplayer/plugin-sdk": "^2.0.0"
   },
