@@ -9,6 +9,7 @@
   "nuclear": {
     "displayName": "SoundCloud",
     "category": "streaming",
+    "categories": ["metadata", "streaming", "playlists"],
     "icon": {
       "type": "link",
       "link": "https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2cadd14bdb.ico"

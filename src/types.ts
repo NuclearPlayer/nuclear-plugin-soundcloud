@@ -71,12 +71,20 @@ export type SoundcloudStreamResponse = {
   url: string;
 };
 
+export type SoundcloudTrackStub = {
+  id: number;
+};
+
 export type SoundcloudPlaylist = {
   id: number;
   title: string;
+  description: string | null;
   permalink_url: string;
   artwork_url: string | null;
   track_count: number;
   user: SoundcloudUser;
   kind: string;
+  created_at: string;
+  last_modified: string;
+  tracks: (SoundcloudTrack | SoundcloudTrackStub)[];
 };

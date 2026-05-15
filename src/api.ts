@@ -128,3 +128,14 @@ export const getUserPlaylists = async (
   apiRequest(fetchFn, `users/${userId}/playlists`, {
     limit: String(limit),
   });
+
+export const resolve = async <T>(
+  fetchFn: FetchFunction,
+  url: string,
+): Promise<T> => apiRequest(fetchFn, 'resolve', { url });
+
+export const getTracks = async (
+  fetchFn: FetchFunction,
+  ids: number[],
+): Promise<SoundcloudTrack[]> =>
+  apiRequest(fetchFn, 'tracks', { ids: ids.join(',') });

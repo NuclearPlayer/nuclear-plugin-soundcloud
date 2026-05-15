@@ -2,6 +2,7 @@ import type {
   ArtistRef,
   ArtistSocialStats,
   ArtworkSet,
+  Playlist,
   PlaylistRef,
   StreamCandidate,
   Track,
@@ -12,6 +13,7 @@ import {
   ARTWORK_LARGE_SUFFIX,
   ARTWORK_THUMBNAIL_SUFFIX,
   METADATA_PROVIDER_ID,
+  PLAYLIST_PROVIDER_ID,
   STREAMING_PROVIDER_ID,
 } from './config';
 import type {
@@ -167,4 +169,23 @@ export const mapTrackToStreamCandidate = (
       : undefined,
   failed: false,
   source: makeSource(STREAMING_PROVIDER_ID, track),
+});
+
+export const mapPlaylistToPlaylist = (
+  playlist: SoundcloudPlaylist,
+  tracks: SoundcloudTrack[],
+): Playlist => ({
+  id: String(playlist.id),
+  name: playlist.title,
+  description: playlist.description ?? undefined,
+  artwork: makeTrackArtworkSet(playlist.artwork_url, playlist.user.avatar_url),
+  createdAtIso: new Date(playlist.created_at).toISOString(),
+  lastModifiedIso: new Date(playlist.last_modified).toISOString(),
+  isReadOnly: true,
+  origin: makeSource(PLAYLIST_PROVIDER_ID, playlist),
+  items: tracks.map((track) => ({
+    id: String(track.id),
+    track: mapTrackToTrack(track),
+    addedAtIso: new Date(playlist.created_at).toISOString(),
+  })),
 });
